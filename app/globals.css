@@ -384,6 +384,25 @@
   pointer-events: none;
 }
 
+/* Contact Section Moving Glowing Border Wrapper */
+.contact-glow-border-wrapper {
+  --border-angle: 0turn;
+  animation: bg-spin 4s linear infinite;
+  background: conic-gradient(from var(--border-angle), #ff0000 0%, #ff6600 25%, #ff0000 50%, #ff6600 75%, #ff0000 100%);
+  padding: 2px;
+  border-radius: 14px;
+  box-shadow:
+    0 0 8px 2px rgba(255, 60, 0, 0.6),
+    0 0 20px 4px rgba(255, 60, 0, 0.35),
+    0 0 40px 8px rgba(255, 60, 0, 0.15);
+}
+
+.contact-glow-inner {
+  background-color: var(--neo-bg-primary);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
 /* Footer Moving Glowing Border */
 .footer-glow-border {
   --border-angle: 0turn;

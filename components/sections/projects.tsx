@@ -36,12 +36,12 @@ const PROJECTS = [
   },
   {
     id: 4,
-    title: 'Manajemen Tugas',
-    description: 'Alat manajemen tugas kolaboratif dengan pembaruan real-time dan fitur tim.',
-    tech: ['React', 'TypeScript', 'Supabase', 'Tailwind'],
-    image: '/projects/project-4.png',
-    demo: '#',
-    github: 'https://github.com',
+    title: 'dyyLEARNING',
+    description: 'Platform e-learning generasi baru untuk menguasai skill masa depan lewat ribuan kursus interaktif. Menyediakan pengalaman belajar tanpa batas secara gratis.',
+    tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Drizzle ORM', 'NeonDB'],
+    image: '/projects/dyyLEARNING.png',
+    demo: 'https://dyylearning-project.vercel.app/',
+    github: 'https://github.com/Audyhidayat31/dyylearning-project',
   },
   {
     id: 5,

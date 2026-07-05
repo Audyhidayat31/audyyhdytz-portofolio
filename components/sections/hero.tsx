@@ -40,10 +40,10 @@ export function HeroSection() {
               className="relative mb-6 w-32 h-32 md:w-40 md:h-40 mx-auto"
             >
               <div className="neo-border neo-border-blue w-full h-full rounded-full overflow-hidden relative bg-gradient-to-br from-yellow-400 via-blue-400 to-red-400">
-                <Image 
-                  src="/profile.jpg" 
-                  alt="Profile" 
-                  fill 
+                <Image
+                  src="/profile.jpg"
+                  alt="Profile"
+                  fill
                   className="object-cover"
                 />
               </div>
@@ -70,7 +70,7 @@ export function HeroSection() {
 
             {/* Description */}
             <p className="text-sm md:text-base text-foreground/80 mb-6 leading-relaxed">
-              Seorang developer dan desainer yang bersemangat dalam menciptakan pengalaman digital yang indah dan fungsional. Spesialisasi dalam teknologi web modern dan prinsip desain yang berpusat pada pengguna.
+              Mahasiswa Informatika yang memiliki minat di bidang Web Development dan UI/UX Design. Berpengalaman mengembangkan aplikasi web menggunakan teknologi modern dengan fokus pada desain yang menarik, performa yang optimal, serta pengalaman pengguna yang nyaman dan mudah digunakan.
             </p>
 
             {/* CTA Buttons */}
@@ -102,7 +102,6 @@ export function HeroSection() {
               transition={{ duration: 2, repeat: Infinity }}
               className="text-foreground/60 text-sm"
             >
-              Gulir untuk menjelajah ↓
             </motion.div>
           </div>
         </FadeUp>

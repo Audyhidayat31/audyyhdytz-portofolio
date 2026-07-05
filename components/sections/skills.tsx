@@ -30,7 +30,7 @@ const SKILLS_DATA = [
   { name: 'HTML5', category: 'frontend', icon: IconHTML5, color: 'text-orange-500', glow: 'hover:border-orange-500 hover:shadow-orange-500/20' },
   { name: 'CSS3', category: 'frontend', icon: IconCSS3, color: 'text-blue-500', glow: 'hover:border-blue-500 hover:shadow-blue-500/20' },
   { name: 'JavaScript', category: 'frontend', icon: IconJavaScript, color: 'text-yellow-400', glow: 'hover:border-yellow-400 hover:shadow-yellow-400/20' },
-  { name: 'TypeScript', category: 'frontend', icon: IconTypeScript, color: 'text-blue-600', glow: 'hover:border-blue-600 hover:shadow-blue-600/20' },
+  { name: 'TypeScript', category: 'frontend', icon: IconTypeScript, color: '', glow: 'hover:border-blue-600 hover:shadow-blue-600/20' },
   { name: 'React', category: 'frontend', icon: IconReact, color: 'text-cyan-400', glow: 'hover:border-cyan-400 hover:shadow-cyan-400/20' },
   { name: 'Next.js', category: 'frontend', icon: IconNextjs, color: 'text-foreground', glow: 'hover:border-foreground hover:shadow-foreground/20' },
   { name: 'Tailwind', category: 'frontend', icon: IconTailwind, color: 'text-teal-400', glow: 'hover:border-teal-400 hover:shadow-teal-400/20' },

@@ -1,5 +1,3 @@
-import { ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { FadeUp } from '../animations/fade-up';
 
 const EmailIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -77,10 +75,7 @@ const CONTACTS = [
 
 export function ContactSection() {
   return (
-    <section
-      id="contact"
-      className="relative py-20 md:py-32 px-4 md:px-6"
-    >
+    <section id="contact" className="relative py-20 md:py-32 px-4 md:px-6">
       <div className="max-w-4xl mx-auto">
         <FadeUp>
           <h2 className="text-xl md:text-2xl font-black mb-4 text-center">
@@ -91,30 +86,29 @@ export function ContactSection() {
           </p>
         </FadeUp>
 
-        <div className="neo-card neo-border-red">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {CONTACTS.map((contact, idx) => {
-              const Icon = contact.icon;
-              return (
-                <FadeUp key={contact.id} delay={idx * 0.1} className="h-full">
-                  <motion.a
-                    href={contact.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ y: -4, scale: 1.02 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="neo-border neo-border-blue flex flex-col items-center text-center p-6 rounded-xl transition-all hover:shadow-lg h-full"
-                  >
-                    <Icon className={`w-8 h-8 mb-3 ${contact.color}`} />
-                    <h3 className="font-bold mb-1">{contact.label}</h3>
-                    <p className="text-xs text-foreground/60 break-all">
-                      {contact.value}
-                    </p>
-                    <ExternalLink className="w-3 h-3 mt-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </motion.a>
-                </FadeUp>
-              );
-            })}
+        <div className="contact-glow-border-wrapper">
+          <div className="contact-glow-inner">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {CONTACTS.map((contact, idx) => {
+                const Icon = contact.icon;
+                return (
+                  <FadeUp key={contact.id} delay={idx * 0.1} className="h-full">
+                    <a
+                      href={contact.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="neo-border neo-border-blue flex flex-col items-center text-center p-6 rounded-xl h-full"
+                    >
+                      <Icon className={`w-8 h-8 mb-3 ${contact.color}`} />
+                      <h3 className="font-bold mb-1">{contact.label}</h3>
+                      <p className="text-xs text-foreground/60 break-all">
+                        {contact.value}
+                      </p>
+                    </a>
+                  </FadeUp>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
