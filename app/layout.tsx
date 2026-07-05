@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Nama Anda | Portofolio',
+    title: 'Audy Abdillah Hidayat | Portofolio',
     description: 'Portofolio profesional yang menampilkan karya saya dalam pengembangan dan desain web',
     type: 'website',
   },
