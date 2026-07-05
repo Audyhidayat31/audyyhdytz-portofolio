@@ -39,7 +39,7 @@ export function EducationSection() {
     >
       <div className="max-w-4xl mx-auto">
         <FadeUp>
-          <h2 className="text-xl md:text-2xl font-black mb-10">Pendidikan</h2>
+          <h2 className="text-xl md:text-2xl font-black mb-10">PENDIDIKAN</h2>
         </FadeUp>
 
         <div className="space-y-6">

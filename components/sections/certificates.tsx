@@ -17,7 +17,7 @@ const CERTIFICATES = [
     id: 1,
     name: 'Profesional Programmer With Golang',
     issuer: 'Course / Bootcamp',
-    year: 2024,
+    year: 2023,
     description: 'Pengembangan backend menggunakan bahasa pemrograman Golang',
     color: 'from-blue-500/20 to-blue-600/10',
     borderColor: 'border-blue-500',
@@ -33,7 +33,7 @@ const CERTIFICATES = [
     description: 'Workshop programming untuk pengembangan aplikasi AI',
     color: 'from-purple-500/20 to-purple-600/10',
     borderColor: 'border-purple-500',
-    link: '/certificates/Workshop Programming Untuk Pengembangan Aplikasi AI.pdf', 
+    link: '/certificates/Workshop Programming Untuk Pengembangan Aplikasi AI.pdf',
     image: '/certificates/Workshop Programming Untuk Pengembangan Aplikasi AI.pdf',
     icon: '🤖'
   },
@@ -45,7 +45,7 @@ const CERTIFICATES = [
     description: 'Dasar-dasar pemrograman dengan Python (PCAP)',
     color: 'from-green-500/20 to-green-600/10',
     borderColor: 'border-green-500',
-    link: '/certificates/PCAP - Programming Essentials in Python.pdf', 
+    link: '/certificates/PCAP - Programming Essentials in Python.pdf',
     image: '/certificates/PCAP - Programming Essentials in Python.pdf',
     icon: '🐍'
   },
@@ -53,11 +53,11 @@ const CERTIFICATES = [
     id: 4,
     name: 'CCNA Introduction to Networks',
     issuer: 'Cisco Networking Academy',
-    year: 2024,
+    year: 2025,
     description: 'Dasar-dasar jaringan komputer dan routing',
     color: 'from-orange-500/20 to-orange-600/10',
     borderColor: 'border-orange-500',
-    link: '/certificates/CCNA Introduction to Networks.pdf', 
+    link: '/certificates/CCNA Introduction to Networks.pdf',
     image: '/certificates/CCNA Introduction to Networks.pdf',
     icon: '🌐'
   },
@@ -65,11 +65,11 @@ const CERTIFICATES = [
     id: 5,
     name: 'MikroTik MTCNA',
     issuer: 'MikroTik',
-    year: 2024,
+    year: 2026,
     description: 'MikroTik Certified Network Associate',
     color: 'from-yellow-500/20 to-yellow-600/10',
     borderColor: 'border-yellow-500',
-    link: '/certificates/Mikrotik MTCNA.pdf', 
+    link: '/certificates/Mikrotik MTCNA.pdf',
     image: '/certificates/Mikrotik MTCNA.pdf',
     icon: '📡'
   },
@@ -77,11 +77,11 @@ const CERTIFICATES = [
     id: 6,
     name: 'Transformasi Digital: IoT & AI',
     issuer: 'Seminar',
-    year: 2024,
+    year: 2025,
     description: 'Integrasi IoT dan Kecerdasan Buatan untuk masa depan',
     color: 'from-amber-500/20 to-amber-600/10',
     borderColor: 'border-amber-500',
-    link: '/certificates/Transformasi Digital  Integrasi IoT & Kecerdasan Buatan Untuk Solusi Masa Depan.pdf', 
+    link: '/certificates/Transformasi Digital  Integrasi IoT & Kecerdasan Buatan Untuk Solusi Masa Depan.pdf',
     image: '/certificates/Transformasi Digital  Integrasi IoT & Kecerdasan Buatan Untuk Solusi Masa Depan.pdf',
     icon: '💡'
   },
@@ -93,7 +93,7 @@ const CERTIFICATES = [
     description: 'Sistem manajemen pembelajaran SPADA',
     color: 'from-teal-500/20 to-teal-600/10',
     borderColor: 'border-teal-500',
-    link: '/certificates/Learning Manajemen Sistem SPADA.pdf', 
+    link: '/certificates/Learning Manajemen Sistem SPADA.pdf',
     image: '/certificates/Learning Manajemen Sistem SPADA.pdf',
     icon: '📚'
   },
@@ -101,11 +101,11 @@ const CERTIFICATES = [
     id: 8,
     name: 'Entrepreneurship',
     issuer: 'Seminar',
-    year: 2024,
+    year: 2023,
     description: 'Kewirausahaan untuk masa depan yang lebih baik',
     color: 'from-rose-500/20 to-rose-600/10',
     borderColor: 'border-rose-500',
-    link: '/certificates/Entrepreneurship For a Better Future.pdf', 
+    link: '/certificates/Entrepreneurship For a Better Future.pdf',
     image: '/certificates/Entrepreneurship For a Better Future.pdf',
     icon: '💼'
   }
@@ -122,7 +122,7 @@ export function CertificatesSection() {
     >
       <div className="max-w-7xl mx-auto">
         <FadeUp>
-          <h2 className="text-xl md:text-2xl font-black mb-10 text-center">Sertifikat</h2>
+          <h2 className="text-xl md:text-2xl font-black mb-10 text-center">SERTIFIKAT</h2>
         </FadeUp>
 
         <FadeUp delay={0.2}>
@@ -142,7 +142,7 @@ export function CertificatesSection() {
                 transform: scale(1.3);
               }
             `}</style>
-            
+
             <Swiper
               onSwiper={(swiper) => setSwiperInstance(swiper)}
               effect={'coverflow'}
@@ -189,16 +189,16 @@ export function CertificatesSection() {
 
             {/* Active Certificate Details with Integrated Navigation */}
             <div className="mt-8 text-center max-w-2xl mx-auto flex flex-col items-center w-full">
-              
+
               {/* Navigation and Year Badge (Static wrapper to preserve Swiper listeners) */}
               <div className="flex items-center justify-center gap-6 mb-4 w-full z-20">
-                <button 
+                <button
                   onClick={() => swiperInstance?.slidePrev()}
                   className="swiper-button-prev-custom w-12 h-12 rounded-full border border-primary/20 flex flex-shrink-0 items-center justify-center text-primary hover:bg-primary/10 transition-colors cursor-pointer pointer-events-auto"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
-                
+
                 <motion.div
                   key={`year-${activeIndex}`}
                   initial={{ opacity: 0, y: 15 }}
@@ -206,11 +206,11 @@ export function CertificatesSection() {
                   transition={{ duration: 0.4, ease: "easeOut" }}
                   className="flex items-center justify-center gap-2 text-primary font-bold text-lg min-w-[120px]"
                 >
-                   <span>{CERTIFICATES[activeIndex]?.icon}</span>
-                   <span>{CERTIFICATES[activeIndex]?.year}</span>
+                  <span>{CERTIFICATES[activeIndex]?.icon}</span>
+                  <span>{CERTIFICATES[activeIndex]?.year}</span>
                 </motion.div>
-                
-                <button 
+
+                <button
                   onClick={() => swiperInstance?.slideNext()}
                   className="swiper-button-next-custom w-12 h-12 rounded-full border border-primary/20 flex flex-shrink-0 items-center justify-center text-primary hover:bg-primary/10 transition-colors cursor-pointer pointer-events-auto"
                 >
@@ -226,12 +226,12 @@ export function CertificatesSection() {
                 className="w-full px-4"
               >
                 <h3 className="text-2xl md:text-3xl font-extrabold mb-3 text-foreground tracking-tight">
-                    {CERTIFICATES[activeIndex]?.issuer}
+                  {CERTIFICATES[activeIndex]?.issuer}
                 </h3>
                 <p className="text-foreground/60 text-lg mb-8 font-medium">
-                    {CERTIFICATES[activeIndex]?.description}
+                  {CERTIFICATES[activeIndex]?.description}
                 </p>
-                
+
                 <div className="flex gap-4 justify-center items-center">
                   <motion.a
                     href={CERTIFICATES[activeIndex]?.link || '#'}
@@ -241,7 +241,7 @@ export function CertificatesSection() {
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-2 px-6 py-2.5 rounded-full text-primary hover:text-primary/80 transition-colors font-bold text-sm border-b border-transparent hover:border-primary/50"
                   >
-                    Sertifikat <ArrowUpRight className="w-4 h-4" />
+                    SERTIFIKAT <ArrowUpRight className="w-4 h-4" />
                   </motion.a>
                   <motion.a
                     href={CERTIFICATES[activeIndex]?.image || '#'}

@@ -30,10 +30,10 @@ export function FooterSection() {
             <h4 className="font-bold mb-4">Tautan Langsung</h4>
             <ul className="space-y-2 text-sm">
               {[
-                { label: 'Tentang', id: 'about' },
-                { label: 'Proyek', id: 'projects' },
-                { label: 'Keahlian', id: 'skills' },
-                { label: 'Kontak', id: 'contact' },
+                { label: 'TENTANG', id: 'about' },
+                { label: 'PROYEK', id: 'projects' },
+                { label: 'KEAHLIAN', id: 'skills' },
+                { label: 'KONTAK', id: 'contact' },
               ].map(link => (
                 <li key={link.id}>
                   <a

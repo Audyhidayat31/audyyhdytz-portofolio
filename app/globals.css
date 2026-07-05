@@ -331,16 +331,7 @@
               conic-gradient(from var(--border-angle), transparent 50%, var(--neo-card-border) 100%) border-box !important;
 }
 
-.skill-card-glow::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: conic-gradient(from var(--border-angle), transparent 50%, var(--neo-card-border) 100%);
-  filter: blur(8px);
-  z-index: -1;
-  opacity: 0.8;
-}
+
 
 /* Animated Glow for Borders */
 @keyframes slide-border-glow {

@@ -79,7 +79,7 @@ export function ContactSection() {
       <div className="max-w-4xl mx-auto">
         <FadeUp>
           <h2 className="text-xl md:text-2xl font-black mb-4 text-center">
-            Mari Terhubung
+            MARI TERHUBUNG
           </h2>
           <p className="text-center text-foreground/70 mb-16 max-w-2xl mx-auto">
             Jangan ragu untuk menghubungi saya untuk proyek, kolaborasi, atau sekadar mengobrol santai. Saya selalu tertarik untuk mendengar tentang peluang baru.

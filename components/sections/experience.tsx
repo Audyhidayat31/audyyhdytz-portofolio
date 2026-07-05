@@ -47,7 +47,7 @@ export function ExperienceSection() {
     >
       <div className="max-w-4xl mx-auto">
         <FadeUp>
-          <h2 className="text-xl md:text-2xl font-black mb-10">Pengalaman</h2>
+          <h2 className="text-xl md:text-2xl font-black mb-10">PENGALAMAN</h2>
         </FadeUp>
 
         <div className="relative">
@@ -76,9 +76,8 @@ export function ExperienceSection() {
                   {/* Timeline dot */}
                   <div className="flex absolute left-4 md:left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 items-center justify-center">
                     {/* Pulsing ring */}
-                    <div className={`absolute w-6 h-6 rounded-full animate-ping opacity-50 ${
-                      idx === 0 ? 'bg-yellow-400' : idx === 1 ? 'bg-blue-500' : 'bg-red-400'
-                    }`} />
+                    <div className={`absolute w-6 h-6 rounded-full animate-ping opacity-50 ${idx === 0 ? 'bg-yellow-400' : idx === 1 ? 'bg-blue-500' : 'bg-red-400'
+                      }`} />
                     <div className="w-4 h-4 neo-border neo-border-green rounded-full bg-background relative z-10" />
                   </div>
 
@@ -92,9 +91,8 @@ export function ExperienceSection() {
                   >
                     <div className="flex items-start gap-3 mb-3">
                       <Briefcase
-                        className={`w-5 h-5 flex-shrink-0 mt-1 ${
-                          TYPE_COLORS[exp.type as keyof typeof TYPE_COLORS]
-                        }`}
+                        className={`w-5 h-5 flex-shrink-0 mt-1 ${TYPE_COLORS[exp.type as keyof typeof TYPE_COLORS]
+                          }`}
                       />
                       <div>
                         <h3 className="text-lg font-bold">{exp.title}</h3>
@@ -111,9 +109,8 @@ export function ExperienceSection() {
                         {exp.period}
                       </span>
                       <span
-                        className={`text-xs font-bold ${
-                          TYPE_COLORS[exp.type as keyof typeof TYPE_COLORS]
-                        }`}
+                        className={`text-xs font-bold ${TYPE_COLORS[exp.type as keyof typeof TYPE_COLORS]
+                          }`}
                       >
                         {exp.type}
                       </span>
