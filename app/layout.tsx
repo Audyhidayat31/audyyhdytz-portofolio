@@ -15,6 +15,7 @@ const greatVibes = Great_Vibes({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
   title: 'Audy Abdillah Hidayat | Portofolio Mahasiswa Informatika',
   description: 'Portofolio profesional dari mahasiswa Informatika dan developer yang bersemangat. Menampilkan proyek, keahlian, dan pengalaman dalam pengembangan web dan desain UI/UX.',
   keywords: ['Portofolio', 'Developer', 'Pengembangan Web', 'React', 'Next.js', 'UI/UX'],
@@ -40,6 +41,20 @@ export const metadata: Metadata = {
     title: 'Audy Abdillah Hidayat | Portofolio',
     description: 'Portofolio profesional yang menampilkan karya saya dalam pengembangan dan desain web',
     type: 'website',
+    images: [
+      {
+        url: '/profile.jpg',
+        width: 800,
+        height: 800,
+        alt: 'Audy Abdillah Hidayat Profile Photo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary', // using summary for the smaller square image, summary_large_image for large image
+    title: 'Audy Abdillah Hidayat | Portofolio',
+    description: 'Portofolio profesional yang menampilkan karya saya dalam pengembangan dan desain web',
+    images: ['/profile.jpg'],
   },
 }
 

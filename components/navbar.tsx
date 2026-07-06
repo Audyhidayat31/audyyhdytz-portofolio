@@ -108,7 +108,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden mt-4 p-3 rounded-xl neo-border neo-border-emerald flex flex-col gap-1.5"
+            className="md:hidden mt-4 p-3 rounded-xl neo-border neo-border-emerald bg-background/60 backdrop-blur-md flex flex-col gap-1.5"
           >
             {NAV_ITEMS.map(item => (
               <button
