@@ -48,7 +48,7 @@ const PROJECTS = [
     title: 'RemovedBG',
     description: 'Aplikasi web cerdas berbasis AI untuk menghapus latar belakang gambar secara otomatis. Memberikan hasil potongan beresolusi tinggi (HD) dengan proses super cepat di bawah 5 detik secara gratis.',
     tech: ['Next.js', 'React', 'Tailwind CSS', 'AI Technology'],
-    image: '/projects/removedbg.png',
+    image: '/projects/RemovedBG.png',
     demo: 'https://project-removedbg.vercel.app/',
     github: 'https://github.com/Audyhidayat31/project.removebg',
   },
