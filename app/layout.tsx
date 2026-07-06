@@ -54,6 +54,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
+import Background from '@/components/Background'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,8 +63,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`scroll-smooth dark ${spaceGrotesk.variable} ${greatVibes.variable} overflow-x-hidden`}>
-      <body className={`${spaceGrotesk.className} antialiased bg-background text-foreground overflow-x-hidden w-full relative`}>
-        {children}
+      <body className={`${spaceGrotesk.className} antialiased bg-slate-950 text-slate-300 overflow-x-hidden w-full relative min-h-screen`}>
+        <Background />
+        <div className="relative z-10 flex flex-col min-h-screen">
+          {children}
+        </div>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

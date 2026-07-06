@@ -1,7 +1,7 @@
 'use client';
 
 import { Navbar } from '@/components/navbar';
-import { AnimatedBackground } from '@/components/ui/animated-background';
+
 import { HeroSection } from '@/components/sections/hero';
 import { AboutSection } from '@/components/sections/about';
 import { SkillsSection } from '@/components/sections/skills';
@@ -15,7 +15,7 @@ import { FooterSection } from '@/components/sections/footer';
 export default function Page() {
   return (
     <>
-      <AnimatedBackground />
+
       <Navbar />
       <main className="relative">
         <HeroSection />
