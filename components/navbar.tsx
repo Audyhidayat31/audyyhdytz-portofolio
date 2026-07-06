@@ -87,7 +87,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden neo-border neo-border-red w-10 h-10 flex items-center justify-center rounded-lg"
+              className="md:hidden neo-border neo-border-emerald w-10 h-10 flex items-center justify-center rounded-lg"
               aria-label="Toggle menu"
             >
               {isOpen ? (
@@ -105,7 +105,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden mt-4 pt-4 border-t neo-border neo-border-yellow flex flex-col gap-2"
+            className="md:hidden mt-4 p-3 rounded-xl neo-border neo-border-emerald flex flex-col gap-1.5"
           >
             {NAV_ITEMS.map(item => (
               <button

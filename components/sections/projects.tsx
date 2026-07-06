@@ -105,7 +105,7 @@ export function ProjectsSection() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex-1 neo-border neo-border-blue flex items-center justify-center gap-2 py-2 rounded-lg font-medium bg-yellow-400 text-black hover:bg-yellow-500 transition-colors"
+                    className="flex-1 neo-border flex items-center justify-center gap-2 py-2 rounded-lg font-medium bg-emerald-500 text-white hover:bg-emerald-600 transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Visit Website
