@@ -19,10 +19,10 @@ import {
 import { Zap, Palette } from 'lucide-react';
 
 const CATEGORIES = [
-  { id: 'frontend', name: 'FRONTEND', color: 'bg-blue-500' },
-  { id: 'backend', name: 'BACKEND', color: 'bg-green-500' },
-  { id: 'database', name: 'BASIS DATA', color: 'bg-orange-500' },
-  { id: 'tools', name: 'ALAT & DESAIN', color: 'bg-purple-500' },
+  { id: 'frontend', name: 'FRONTEND', color: 'bg-blue-500', hex: '#3b82f6' },
+  { id: 'backend', name: 'BACKEND', color: 'bg-emerald-500', hex: '#10b981' },
+  { id: 'database', name: 'BASIS DATA', color: 'bg-orange-500', hex: '#f97316' },
+  { id: 'tools', name: 'ALAT & DESAIN', color: 'bg-purple-500', hex: '#a855f7' },
 ];
 
 const SKILLS_DATA = [
@@ -36,7 +36,7 @@ const SKILLS_DATA = [
   { name: 'Tailwind', category: 'frontend', icon: IconTailwind, color: 'text-teal-400', glow: 'hover:border-teal-400 hover:shadow-teal-400/20' },
   
   // Backend
-  { name: 'Node.js', category: 'backend', icon: IconNodejs, color: 'text-green-500', glow: 'hover:border-green-500 hover:shadow-green-500/20' },
+  { name: 'Node.js', category: 'backend', icon: IconNodejs, color: 'text-emerald-500', glow: 'hover:border-emerald-500 hover:shadow-emerald-500/20' },
   { name: 'Python', category: 'backend', icon: IconPython, color: 'text-yellow-500', glow: 'hover:border-yellow-500 hover:shadow-yellow-500/20' },
   { name: 'API / REST', category: 'backend', icon: Zap, color: 'text-gray-400', glow: 'hover:border-gray-400 hover:shadow-gray-400/20' },
   
@@ -92,7 +92,8 @@ export function SkillsSection() {
               >
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className={`neo-card skill-card-glow flex flex-col items-center justify-center p-6 rounded-2xl transition-all duration-300 h-full ${skill.glow} relative group cursor-default ${['neo-border-yellow', 'neo-border-blue', 'neo-border-red', 'neo-border-green'][idx % 4]}`}
+                  className={`neo-card skill-card-glow flex flex-col items-center justify-center p-6 rounded-2xl transition-all duration-300 h-full ${skill.glow} relative group cursor-default`}
+                  style={{ '--neo-card-border': cat?.hex } as React.CSSProperties}
                 >
                   {/* Subtle category dot */}
                   <div className={`absolute top-3 right-3 w-2 h-2 rounded-full ${cat?.color} opacity-60 group-hover:opacity-100 transition-opacity`} />

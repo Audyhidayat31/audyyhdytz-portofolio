@@ -1,111 +1,69 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Briefcase, Mail } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import { FadeUp } from '../animations/fade-up';
 
-const TITLES = [
-  'Mahasiswa Informatika',
-  'Front-End Developer',
-  'UI/UX Enthusiast',
-  'Web Developer',
-  'AI Enthusiast',
-];
-
 export function HeroSection() {
-  const [titleIndex, setTitleIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex(prev => (prev + 1) % TITLES.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-28 md:pt-36 px-4 md:px-6"
+      className="relative flex flex-col items-center justify-center min-h-screen px-6 pt-20 z-10 pb-8"
     >
-      <div className="max-w-2xl w-full">
-        <FadeUp>
-          <div className="neo-card neo-border-green text-center">
-            {/* Profile Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative mb-6 w-32 h-32 md:w-40 md:h-40 mx-auto"
-            >
-              <div className="neo-border neo-border-blue w-full h-full rounded-full overflow-hidden relative bg-gradient-to-br from-yellow-400 via-blue-400 to-red-400">
-                <Image
-                  src="/profile.jpg"
-                  alt="Profile"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <motion.div
-                className="absolute inset-0 rounded-full border-2 border-yellow-400"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-emerald-500/10 rounded-full blur-[100px] sm:blur-[120px] -z-10"></div>
+
+      <FadeUp delay={0.1}>
+        {/* Profile Image */}
+        <div className="relative z-10 mb-8">
+          <motion.div
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <div className="relative w-32 h-32 md:w-36 md:h-36 overflow-hidden rounded-full cursor-pointer bg-slate-900 border-2 border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.8)] hover:scale-105 active:scale-95 transition-all duration-300 mx-auto">
+              <Image
+                src="/profile.jpg"
+                alt="Foto Profil Audy Abdillah Hidayat"
+                fill
+                className="object-cover"
+                priority
               />
-            </motion.div>
-
-            {/* Name */}
-            <h1 className="text-xl md:text-2xl font-black mb-2">Audy Abdillah Hidayat</h1>
-
-            {/* Animated Titles */}
-            <motion.div
-              key={titleIndex}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="text-lg md:text-xl font-bold text-yellow-500 dark:text-yellow-400 mb-4 h-8"
-            >
-              {TITLES[titleIndex]}
-            </motion.div>
-
-            {/* Description */}
-            <p className="text-sm md:text-base text-foreground/80 mb-6 leading-relaxed">
-              Mahasiswa Informatika yang memiliki minat di bidang Web Development dan UI/UX Design. Berpengalaman mengembangkan aplikasi web menggunakan teknologi modern dengan fokus pada desain yang menarik, performa yang optimal, serta pengalaman pengguna yang nyaman dan mudah digunakan.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="neo-border neo-border-red neo-card !p-3 font-bold text-center rounded-lg inline-flex items-center justify-center gap-2 bg-yellow-400 text-black hover:bg-yellow-500 transition-colors text-sm"
-              >
-                <Mail className="w-5 h-5" />
-                Hubungi Saya
-              </motion.a>
-
-              <motion.a
-                href="#projects"
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="neo-border neo-border-yellow neo-card !p-3 font-bold text-center rounded-lg inline-flex items-center justify-center gap-2 bg-blue-500 text-white hover:bg-blue-600 transition-colors text-sm"
-              >
-                <Briefcase className="w-5 h-5" />
-                Lihat Portofolio
-              </motion.a>
             </div>
+          </motion.div>
+        </div>
+      </FadeUp>
 
-            {/* Scroll Indicator */}
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="text-foreground/60 text-sm"
-            >
-            </motion.div>
-          </div>
-        </FadeUp>
-      </div>
+      <FadeUp delay={0.2}>
+        {/* Heading */}
+        <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight text-center md:text-5xl lg:text-5xl text-slate-100">
+          Halo, Saya <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Audy Abdillah Hidayat.</span>
+        </h1>
+      </FadeUp>
+
+      <FadeUp delay={0.3}>
+        {/* Description */}
+        <p className="max-w-2xl mt-6 text-sm sm:text-base leading-relaxed text-center text-slate-400">
+          Mahasiswa Informatika yang memiliki minat di bidang Web Development dan UI/UX Design. Berpengalaman mengembangkan aplikasi web menggunakan teknologi modern dengan fokus pada desain yang menarik, performa yang optimal, serta pengalaman pengguna yang nyaman dan mudah digunakan
+        </p>
+      </FadeUp>
+
+      <FadeUp delay={0.4}>
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <a
+            href="#projects"
+            className="px-8 py-3 text-sm font-semibold tracking-wider text-slate-950 uppercase transition-all rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 hover:shadow-[0_0_20px_rgba(52,211,153,0.5)] hover:scale-105 active:scale-95"
+          >
+            Lihat Project
+          </a>
+          <a
+            href="#contact"
+            className="px-8 py-3 text-sm font-semibold tracking-wider text-emerald-400 uppercase transition-all border border-emerald-500/50 rounded-full hover:bg-emerald-500/10 active:scale-95 bg-slate-900"
+          >
+            Hubungi Saya
+          </a>
+        </div>
+      </FadeUp>
     </section>
   );
 }

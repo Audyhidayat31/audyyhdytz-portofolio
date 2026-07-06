@@ -69,7 +69,7 @@ export function AchievementsSection() {
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 viewport={{ once: true }}
-                className="neo-card neo-border-green"
+                className="neo-card neo-border-emerald"
               >
                 <div className="text-5xl mb-4">{achievement.icon}</div>
                 <h3 className="text-lg font-bold mb-2">{achievement.title}</h3>

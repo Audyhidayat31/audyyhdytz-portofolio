@@ -64,7 +64,7 @@ export function AboutSection() {
       <div className="max-w-6xl mx-auto">
         <FadeLeft>
           <div className="mb-10">
-            <h4 className="text-yellow-500 font-bold uppercase tracking-wider text-sm mb-2">TENTANG SAYA</h4>
+            <h4 className="text-emerald-500 font-bold uppercase tracking-wider text-sm mb-2">TENTANG SAYA</h4>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Mengenal Saya Lebih Dekat</h2>
           </div>
         </FadeLeft>
@@ -72,12 +72,12 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left Column */}
           <FadeLeft delay={0.2} className="h-full">
-            <div className="neo-card neo-border-yellow h-full flex flex-col relative overflow-hidden group">
+            <div className="neo-card neo-border-emerald h-full flex flex-col relative overflow-hidden group">
               {/* Subtle background glow */}
-              <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 rounded-full bg-yellow-500/10 blur-3xl transition-transform duration-700 group-hover:scale-150"></div>
+              <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 rounded-full bg-emerald-500/10 blur-3xl transition-transform duration-700 group-hover:scale-150"></div>
               
               <div className="flex items-center gap-4 mb-8">
-                <div className="p-3 bg-yellow-500/10 rounded-full text-yellow-500 ring-1 ring-yellow-500/30">
+                <div className="p-3 bg-emerald-500/10 rounded-full text-emerald-500 ring-1 ring-emerald-500/30">
                   <User size={28} />
                 </div>
                 <h3 className="text-2xl font-bold text-white">Tentang Saya</h3>
@@ -96,7 +96,7 @@ export function AboutSection() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-10">
                 {badges.map((badge, index) => (
                   <div key={index} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <badge.icon className="text-yellow-500 shrink-0" size={20} />
+                    <badge.icon className="text-emerald-500 shrink-0" size={20} />
                     <div className="flex flex-col">
                       <span className="text-sm font-bold text-white leading-tight">{badge.title}</span>
                       <span className="text-xs text-foreground/60">{badge.subtitle}</span>

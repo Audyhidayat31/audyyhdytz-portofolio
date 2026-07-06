@@ -61,7 +61,7 @@ const CONTACTS = [
     label: 'WhatsApp',
     value: '+62 812 9747 2004',
     href: 'https://wa.me/6281297472004',
-    color: 'text-green-500',
+    color: 'text-emerald-500',
   },
   {
     id: 5,
@@ -86,30 +86,26 @@ export function ContactSection() {
           </p>
         </FadeUp>
 
-        <div className="contact-glow-border-wrapper">
-          <div className="contact-glow-inner">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {CONTACTS.map((contact, idx) => {
-                const Icon = contact.icon;
-                return (
-                  <FadeUp key={contact.id} delay={idx * 0.1} className="h-full">
-                    <a
-                      href={contact.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="neo-border neo-border-blue flex flex-col items-center text-center p-6 rounded-xl h-full"
-                    >
-                      <Icon className={`w-8 h-8 mb-3 ${contact.color}`} />
-                      <h3 className="font-bold mb-1">{contact.label}</h3>
-                      <p className="text-xs text-foreground/60 break-all">
-                        {contact.value}
-                      </p>
-                    </a>
-                  </FadeUp>
-                );
-              })}
-            </div>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {CONTACTS.map((contact, idx) => {
+            const Icon = contact.icon;
+            return (
+              <FadeUp key={contact.id} delay={idx * 0.1} className="h-full">
+                <a
+                  href={contact.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center text-center p-6 border border-emerald-500/50 rounded-xl bg-slate-900/80 transition-all duration-300 shadow-lg cursor-pointer hover:-translate-y-2 hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] h-full"
+                >
+                  <Icon className={`w-8 h-8 mb-3 ${contact.color} transition-transform duration-300 group-hover:scale-110`} />
+                  <h3 className="font-bold mb-1 group-hover:text-emerald-400 transition-colors">{contact.label}</h3>
+                  <p className="text-xs text-foreground/60 break-all group-hover:text-emerald-200 transition-colors">
+                    {contact.value}
+                  </p>
+                </a>
+              </FadeUp>
+            );
+          })}
         </div>
       </div>
     </section>

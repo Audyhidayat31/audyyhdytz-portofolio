@@ -43,8 +43,8 @@ const CERTIFICATES = [
     issuer: 'Cisco Networking Academy',
     year: 2024,
     description: 'Dasar-dasar pemrograman dengan Python (PCAP)',
-    color: 'from-green-500/20 to-green-600/10',
-    borderColor: 'border-green-500',
+    color: 'from-emerald-500/20 to-emerald-600/10',
+    borderColor: 'border-emerald-500',
     link: '/certificates/PCAP - Programming Essentials in Python.pdf',
     image: '/certificates/PCAP - Programming Essentials in Python.pdf',
     icon: '🐍'

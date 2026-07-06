@@ -45,12 +45,12 @@ const PROJECTS = [
   },
   {
     id: 5,
-    title: 'Antarmuka Obrolan AI',
-    description: 'Antarmuka obrolan modern yang didukung oleh AI dengan kemampuan pemrosesan bahasa alami.',
-    tech: ['Next.js', 'OpenAI API', 'TypeScript', 'Tailwind'],
-    image: '/projects/project-5.png',
-    demo: '#',
-    github: 'https://github.com',
+    title: 'RemovedBG',
+    description: 'Aplikasi web cerdas berbasis AI untuk menghapus latar belakang gambar secara otomatis. Memberikan hasil potongan beresolusi tinggi (HD) dengan proses super cepat di bawah 5 detik secara gratis.',
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'AI Technology'],
+    image: '/projects/removedbg.png',
+    demo: 'https://project-removedbg.vercel.app/',
+    github: 'https://github.com/Audyhidayat31/project.removebg',
   },
 ];
 
@@ -68,7 +68,7 @@ export function ProjectsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS.map((project, idx) => (
             <HoverLift key={project.id} delay={idx * 0.1} className="h-full">
-              <div className="neo-card neo-border-green flex flex-col h-full">
+              <div className="neo-card neo-border-emerald flex flex-col h-full">
                 {/* Project Image */}
                 <div className="relative neo-border neo-border-yellow rounded-lg overflow-hidden mb-6 h-40 w-full">
                   <Image

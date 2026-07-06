@@ -32,11 +32,11 @@ const EXPERIENCE = [
 ];
 
 const TYPE_COLORS = {
-  Profesional: 'text-blue-500',
-  Freelance: 'text-yellow-500',
-  Proyek: 'text-green-500',
+  Profesional: 'text-yellow-500',
+  Freelance: 'text-blue-500',
+  Proyek: 'text-red-500',
   Organisasi: 'text-purple-500',
-  Hackathon: 'text-red-500',
+  Hackathon: 'text-emerald-500',
 };
 
 export function ExperienceSection() {
@@ -78,7 +78,7 @@ export function ExperienceSection() {
                     {/* Pulsing ring */}
                     <div className={`absolute w-6 h-6 rounded-full animate-ping opacity-50 ${idx === 0 ? 'bg-yellow-400' : idx === 1 ? 'bg-blue-500' : 'bg-red-400'
                       }`} />
-                    <div className="w-4 h-4 neo-border neo-border-green rounded-full bg-background relative z-10" />
+                    <div className={`w-4 h-4 neo-border rounded-full bg-background relative z-10 ${idx === 0 ? 'neo-border-yellow' : idx === 1 ? 'neo-border-blue' : 'neo-border-red'}`} />
                   </div>
 
                   {/* Card */}
@@ -87,7 +87,7 @@ export function ExperienceSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className={`neo-card neo-border-blue ${idx % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'} md:w-[calc(50%-1rem)]`}
+                    className={`neo-card ${idx === 0 ? 'neo-border-yellow' : idx === 1 ? 'neo-border-blue' : 'neo-border-red'} ${idx % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'} md:w-[calc(50%-1rem)]`}
                   >
                     <div className="flex items-start gap-3 mb-3">
                       <Briefcase

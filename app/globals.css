@@ -161,7 +161,7 @@
   --neo-yellow: #ffd700;
   --neo-blue: #0066ff;
   --neo-red: #ff0000;
-  --neo-green: #00aa00;
+  --neo-emerald: #10b981;
   --neo-gray-dark: #1a1a1a;
   --neo-gray-light: #f5f5f5;
   
@@ -274,9 +274,9 @@
   --neo-border-color: var(--neo-red);
   --neo-card-border: var(--neo-red);
 }
-.neo-border-green {
-  --neo-border-color: var(--neo-green);
-  --neo-card-border: var(--neo-green);
+.neo-border-emerald {
+  --neo-border-color: var(--neo-emerald);
+  --neo-card-border: var(--neo-emerald);
 }
 
 /* Neo Brutalism Card */
@@ -397,19 +397,10 @@
 /* Footer Moving Glowing Border */
 .footer-glow-border {
   --border-angle: 0turn;
-  animation: bg-spin 4s linear infinite;
+  /* animation: bg-spin 4s linear infinite; */ /* User wants to keep the border but remove the moving effect */
   border: 2px solid transparent !important;
   background: linear-gradient(var(--neo-bg-primary), var(--neo-bg-primary)) padding-box,
               conic-gradient(from var(--border-angle), #ff00ff 0%, #0000ff 25%, #ff00ff 50%, #0000ff 75%, #ff00ff 100%) border-box !important;
 }
 
-.footer-glow-border::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: conic-gradient(from var(--border-angle), #ff00ff 0%, #0000ff 25%, #ff00ff 50%, #0000ff 75%, #ff00ff 100%);
-  filter: blur(12px);
-  z-index: -1;
-  opacity: 0.9;
-}
+/* .footer-glow-border::before removed to eliminate the glow effect */

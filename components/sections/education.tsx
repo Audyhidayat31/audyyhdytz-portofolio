@@ -50,7 +50,7 @@ export function EducationSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="neo-card neo-border-yellow"
+                className="neo-card neo-border-blue"
               >
                 <div className="flex items-start gap-4">
                   <BookOpen className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
