@@ -70,7 +70,7 @@ export function ProjectsSection() {
             <HoverLift key={project.id} delay={idx * 0.1} className="h-full">
               <div className="neo-card neo-border-emerald flex flex-col h-full">
                 {/* Project Image */}
-                <div className="relative neo-border neo-border-yellow rounded-lg overflow-hidden mb-6 h-40 w-full">
+                <div className="relative neo-border neo-border-emerald rounded-lg overflow-hidden mb-6 h-40 w-full">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -90,7 +90,7 @@ export function ProjectsSection() {
                   {project.tech.map(tech => (
                     <span
                       key={tech}
-                      className="text-xs font-medium neo-border neo-border-red px-3 py-1 rounded-full"
+                      className="text-xs font-medium neo-border neo-border-emerald px-3 py-1 rounded-full"
                     >
                       {tech}
                     </span>
@@ -116,7 +116,7 @@ export function ProjectsSection() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex-1 neo-border neo-border-red flex items-center justify-center gap-2 py-2 rounded-lg font-medium border-foreground/20 hover:bg-muted transition-colors"
+                    className="flex-1 neo-border neo-border-emerald flex items-center justify-center gap-2 py-2 rounded-lg font-medium border-foreground/20 hover:bg-muted transition-colors"
                   >
                     <Code2 className="w-4 h-4" />
                     Github
