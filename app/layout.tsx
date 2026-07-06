@@ -60,8 +60,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="id" className={`scroll-smooth dark ${spaceGrotesk.variable} ${greatVibes.variable}`}>
-      <body className={`${spaceGrotesk.className} antialiased bg-background text-foreground`}>
+    <html lang="id" className={`scroll-smooth dark ${spaceGrotesk.variable} ${greatVibes.variable} overflow-x-hidden`}>
+      <body className={`${spaceGrotesk.className} antialiased bg-background text-foreground overflow-x-hidden w-full relative`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
