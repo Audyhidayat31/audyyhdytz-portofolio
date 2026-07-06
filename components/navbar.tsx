@@ -18,6 +18,7 @@ const NAV_ITEMS = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,8 @@ export function Navbar() {
       });
 
       const scrollPosition = window.scrollY + 100;
+      
+      setIsScrolled(window.scrollY > 20);
 
       for (let i = sections.length - 1; i >= 0; i--) {
         if (scrollPosition >= sections[i].offset) {
@@ -53,7 +56,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur neo-border neo-border-emerald border-b">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/60 backdrop-blur-md neo-border neo-border-emerald border-b' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}

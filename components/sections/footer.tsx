@@ -68,7 +68,7 @@ export function FooterSection() {
         </div>
 
         {/* Divider */}
-        <div className="w-full border-t border-emerald-500/50 relative z-10 my-8" />
+        <div className="w-full border-t border-emerald-500 relative z-10 my-8" />
 
         {/* Copyright */}
         <motion.div

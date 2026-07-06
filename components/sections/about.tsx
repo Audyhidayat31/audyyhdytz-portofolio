@@ -3,15 +3,15 @@
 import { FadeLeft } from '../animations/fade-left';
 import { FadeRight } from '../animations/fade-right';
 import { motion } from 'framer-motion';
-import { 
-  User, 
-  GraduationCap, 
-  Heart, 
-  Sparkles, 
-  Briefcase, 
-  Monitor, 
-  Code2, 
-  Users 
+import {
+  User,
+  GraduationCap,
+  Heart,
+  Sparkles,
+  Briefcase,
+  Monitor,
+  Code2,
+  Users
 } from 'lucide-react';
 
 const whatIDo = [
@@ -65,7 +65,7 @@ export function AboutSection() {
         <FadeLeft>
           <div className="mb-10">
             <h4 className="text-emerald-500 font-bold uppercase tracking-wider text-sm mb-2">TENTANG SAYA</h4>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Mengenal Saya Lebih Dekat</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Profil Profesional</h2>
           </div>
         </FadeLeft>
 
@@ -75,14 +75,14 @@ export function AboutSection() {
             <div className="neo-card neo-border-emerald h-full flex flex-col relative overflow-hidden group">
               {/* Subtle background glow */}
               <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 rounded-full bg-emerald-500/10 blur-3xl transition-transform duration-700 group-hover:scale-150"></div>
-              
+
               <div className="flex items-center gap-4 mb-8">
                 <div className="p-3 bg-emerald-500/10 rounded-full text-emerald-500 ring-1 ring-emerald-500/30">
                   <User size={28} />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Tentang Saya</h3>
+                <h3 className="text-2xl font-bold text-white">Profil Singkat</h3>
               </div>
-              
+
               <div className="space-y-6 text-foreground/80 leading-relaxed flex-grow">
                 <p>
                   Saya adalah mahasiswa Informatika yang memiliki ketertarikan mendalam dalam pengembangan web, desain antarmuka, dan teknologi digital. Saya percaya bahwa teknologi yang baik tidak hanya berfungsi dengan optimal, tetapi juga memberikan pengalaman yang bermakna bagi penggunanya.
@@ -117,7 +117,7 @@ export function AboutSection() {
                 <div className="p-3 bg-blue-500/10 rounded-full text-blue-500 ring-1 ring-blue-500/30">
                   <Briefcase size={28} />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Apa yang Saya Lakukan</h3>
+                <h3 className="text-2xl font-bold text-white">Keahlian Utama</h3>
               </div>
 
               <ul className="space-y-6 flex-grow flex flex-col justify-center">

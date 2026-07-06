@@ -398,9 +398,8 @@
 .footer-glow-border {
   --border-angle: 0turn;
   /* animation: bg-spin 4s linear infinite; */ /* User wants to keep the border but remove the moving effect */
-  border: 2px solid transparent !important;
-  background: linear-gradient(var(--neo-bg-primary), var(--neo-bg-primary)) padding-box,
-              conic-gradient(from var(--border-angle), #ff00ff 0%, #0000ff 25%, #ff00ff 50%, #0000ff 75%, #ff00ff 100%) border-box !important;
+  border: 1px solid var(--neo-blue) !important;
+  background-color: var(--neo-bg-primary);
 }
 
 /* .footer-glow-border::before removed to eliminate the glow effect */
