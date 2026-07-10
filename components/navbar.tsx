@@ -32,7 +32,7 @@ export function Navbar() {
       });
 
       const scrollPosition = window.scrollY + 100;
-      
+
       setIsScrolled(window.scrollY > 20);
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -62,12 +62,11 @@ export function Navbar() {
           {/* Logo */}
           <motion.button
             onClick={() => scrollToSection('hero')}
-            className="text-4xl font-normal"
-            style={{ fontFamily: 'var(--font-great-vibes)' }}
+            className="text-2xl md:text-3xl font-extrabold tracking-tight text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Portofolio.
+            MY PORTOFOLIO.
           </motion.button>
 
           {/* Desktop Navigation */}
