@@ -1,16 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Award, Download, Eye, ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Download } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FadeUp } from '../animations/fade-up';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
-
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 const CERTIFICATES = [
   {
@@ -19,11 +12,10 @@ const CERTIFICATES = [
     issuer: 'Course / Bootcamp',
     year: 2023,
     description: 'Pengembangan backend menggunakan bahasa pemrograman Golang',
-    color: 'from-blue-500/20 to-blue-600/10',
-    borderColor: 'border-blue-500',
     link: '/certificates/Profesional Programmer With Golang.pdf',
-    image: '/certificates/Profesional Programmer With Golang.pdf',
-    icon: '🐹'
+    colorHex: 'text-blue-500',
+    borderColor: 'border-blue-500',
+    shadowColor: 'bg-blue-500',
   },
   {
     id: 2,
@@ -31,11 +23,10 @@ const CERTIFICATES = [
     issuer: 'Workshop',
     year: 2024,
     description: 'Workshop programming untuk pengembangan aplikasi AI',
-    color: 'from-purple-500/20 to-purple-600/10',
-    borderColor: 'border-purple-500',
     link: '/certificates/Workshop Programming Untuk Pengembangan Aplikasi AI.pdf',
-    image: '/certificates/Workshop Programming Untuk Pengembangan Aplikasi AI.pdf',
-    icon: '🤖'
+    colorHex: 'text-purple-500',
+    borderColor: 'border-purple-500',
+    shadowColor: 'bg-purple-500',
   },
   {
     id: 3,
@@ -43,11 +34,10 @@ const CERTIFICATES = [
     issuer: 'Cisco Networking Academy',
     year: 2024,
     description: 'Dasar-dasar pemrograman dengan Python (PCAP)',
-    color: 'from-emerald-500/20 to-emerald-600/10',
-    borderColor: 'border-emerald-500',
     link: '/certificates/PCAP - Programming Essentials in Python.pdf',
-    image: '/certificates/PCAP - Programming Essentials in Python.pdf',
-    icon: '🐍'
+    colorHex: 'text-cyan-400',
+    borderColor: 'border-cyan-400',
+    shadowColor: 'bg-cyan-400',
   },
   {
     id: 4,
@@ -55,11 +45,10 @@ const CERTIFICATES = [
     issuer: 'Cisco Networking Academy',
     year: 2025,
     description: 'Dasar-dasar jaringan komputer dan routing',
-    color: 'from-orange-500/20 to-orange-600/10',
-    borderColor: 'border-orange-500',
     link: '/certificates/CCNA Introduction to Networks.pdf',
-    image: '/certificates/CCNA Introduction to Networks.pdf',
-    icon: '🌐'
+    colorHex: 'text-orange-500',
+    borderColor: 'border-orange-500',
+    shadowColor: 'bg-orange-500',
   },
   {
     id: 5,
@@ -67,11 +56,10 @@ const CERTIFICATES = [
     issuer: 'MikroTik',
     year: 2026,
     description: 'MikroTik Certified Network Associate',
-    color: 'from-yellow-500/20 to-yellow-600/10',
-    borderColor: 'border-yellow-500',
     link: '/certificates/Mikrotik MTCNA.pdf',
-    image: '/certificates/Mikrotik MTCNA.pdf',
-    icon: '📡'
+    colorHex: 'text-yellow-500',
+    borderColor: 'border-yellow-500',
+    shadowColor: 'bg-yellow-500',
   },
   {
     id: 6,
@@ -79,11 +67,10 @@ const CERTIFICATES = [
     issuer: 'Seminar',
     year: 2025,
     description: 'Integrasi IoT dan Kecerdasan Buatan untuk masa depan',
-    color: 'from-amber-500/20 to-amber-600/10',
-    borderColor: 'border-amber-500',
     link: '/certificates/Transformasi Digital  Integrasi IoT & Kecerdasan Buatan Untuk Solusi Masa Depan.pdf',
-    image: '/certificates/Transformasi Digital  Integrasi IoT & Kecerdasan Buatan Untuk Solusi Masa Depan.pdf',
-    icon: '💡'
+    colorHex: 'text-emerald-500',
+    borderColor: 'border-emerald-500',
+    shadowColor: 'bg-emerald-500',
   },
   {
     id: 7,
@@ -91,11 +78,10 @@ const CERTIFICATES = [
     issuer: 'SPADA',
     year: 2024,
     description: 'Sistem manajemen pembelajaran SPADA',
-    color: 'from-teal-500/20 to-teal-600/10',
-    borderColor: 'border-teal-500',
     link: '/certificates/Learning Manajemen Sistem SPADA.pdf',
-    image: '/certificates/Learning Manajemen Sistem SPADA.pdf',
-    icon: '📚'
+    colorHex: 'text-teal-500',
+    borderColor: 'border-teal-500',
+    shadowColor: 'bg-teal-500',
   },
   {
     id: 8,
@@ -103,161 +89,119 @@ const CERTIFICATES = [
     issuer: 'Seminar',
     year: 2023,
     description: 'Kewirausahaan untuk masa depan yang lebih baik',
-    color: 'from-rose-500/20 to-rose-600/10',
-    borderColor: 'border-rose-500',
     link: '/certificates/Entrepreneurship For a Better Future.pdf',
-    image: '/certificates/Entrepreneurship For a Better Future.pdf',
-    icon: '💼'
+    colorHex: 'text-rose-500',
+    borderColor: 'border-rose-500',
+    shadowColor: 'bg-rose-500',
   }
 ];
 
 export function CertificatesSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [swiperInstance, setSwiperInstance] = useState<any>(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
     <section
       id="certificates"
       className="relative py-20 md:py-32 px-4 md:px-6 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <FadeUp>
-          <h2 className="text-xl md:text-2xl font-black mb-10 text-center">SERTIFIKAT</h2>
-        </FadeUp>
-
-        <FadeUp delay={0.2}>
-          <div className="relative w-full max-w-5xl mx-auto">
-            <style jsx global>{`
-              .swiper-pagination-custom .swiper-pagination-bullet {
-                background: hsl(var(--foreground));
-                opacity: 0.3;
-                width: 8px;
-                height: 8px;
-                margin: 0 6px !important;
-                transition: all 0.3s ease;
-              }
-              .swiper-pagination-custom .swiper-pagination-bullet-active {
-                opacity: 1;
-                background: hsl(var(--primary));
-                transform: scale(1.3);
-              }
-            `}</style>
-
-            <Swiper
-              onSwiper={(swiper) => setSwiperInstance(swiper)}
-              effect={'coverflow'}
-              grabCursor={true}
-              centeredSlides={true}
-              loop={true}
-              slidesPerView={'auto'}
-              coverflowEffect={{
-                rotate: 25,
-                stretch: 0,
-                depth: 150,
-                modifier: 1,
-                slideShadows: false,
-              }}
-              pagination={{
-                el: '.swiper-pagination-custom',
-                clickable: true,
-              }}
-              navigation={{
-                nextEl: '.swiper-button-next-custom',
-                prevEl: '.swiper-button-prev-custom',
-              }}
-              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-              modules={[EffectCoverflow, Pagination, Navigation]}
-              className="w-full"
-            >
-              {CERTIFICATES.map((cert) => (
-                <SwiperSlide key={cert.id} className="!w-[260px] sm:!w-[340px] md:!w-[420px] transition-transform duration-300">
-                  <div className={`aspect-[4/3] w-full rounded-xl border-2 ${cert.borderColor} bg-gradient-to-br ${cert.color} p-4 sm:p-6 flex flex-col items-center justify-center text-center shadow-[0_0_40px_rgba(0,0,0,0.2)] backdrop-blur-md relative overflow-hidden bg-card/40`}>
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
-                    <Award className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-primary mb-2 sm:mb-4 opacity-80" />
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1 sm:mb-2 relative z-10 leading-snug">{cert.name}</h3>
-                    <p className="text-xs sm:text-sm text-foreground/70 font-medium relative z-10">{cert.issuer}</p>
-                    <div className="mt-3 sm:mt-6 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-background/80 border border-border/50 text-xs sm:text-sm font-semibold relative z-10 shadow-sm">
-                      {cert.year}
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            {/* Custom Pagination */}
-            <div className="swiper-pagination-custom flex items-center justify-center h-4 mt-6"></div>
-
-            {/* Active Certificate Details with Integrated Navigation */}
-            <div className="mt-8 text-center max-w-2xl mx-auto flex flex-col items-center w-full">
-
-              {/* Navigation and Year Badge (Static wrapper to preserve Swiper listeners) */}
-              <div className="flex items-center justify-center gap-6 mb-4 w-full z-20">
-                <button
-                  onClick={() => swiperInstance?.slidePrev()}
-                  className="swiper-button-prev-custom w-12 h-12 rounded-full border border-primary/20 flex flex-shrink-0 items-center justify-center text-primary hover:bg-primary/10 transition-colors cursor-pointer pointer-events-auto"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-
-                <motion.div
-                  key={`year-${activeIndex}`}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="flex items-center justify-center gap-2 text-primary font-bold text-lg min-w-[120px]"
-                >
-                  <span>{CERTIFICATES[activeIndex]?.icon}</span>
-                  <span>{CERTIFICATES[activeIndex]?.year}</span>
-                </motion.div>
-
-                <button
-                  onClick={() => swiperInstance?.slideNext()}
-                  className="swiper-button-next-custom w-12 h-12 rounded-full border border-primary/20 flex flex-shrink-0 items-center justify-center text-primary hover:bg-primary/10 transition-colors cursor-pointer pointer-events-auto"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-
-              <motion.div
-                key={`details-${activeIndex}`}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
-                className="w-full px-4"
-              >
-                <h3 className="text-2xl md:text-3xl font-extrabold mb-3 text-foreground tracking-tight">
-                  {CERTIFICATES[activeIndex]?.issuer}
-                </h3>
-                <p className="text-foreground/60 text-lg mb-8 font-medium">
-                  {CERTIFICATES[activeIndex]?.description}
-                </p>
-
-                <div className="flex gap-4 justify-center items-center">
-                  <motion.a
-                    href={CERTIFICATES[activeIndex]?.link || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-6 py-2.5 rounded-full text-primary hover:text-primary/80 transition-colors font-bold text-sm border-b border-transparent hover:border-primary/50"
-                  >
-                    SERTIFIKAT <ArrowUpRight className="w-4 h-4" />
-                  </motion.a>
-                  <motion.a
-                    href={CERTIFICATES[activeIndex]?.image || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors font-semibold text-sm"
-                  >
-                    <Eye className="w-4 h-4" /> Lihat Gambar
-                  </motion.a>
-                </div>
-              </motion.div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-8 uppercase tracking-wider">Achievement / Sertifikat</h2>
           </div>
         </FadeUp>
+
+        <div className="relative w-full max-w-4xl mx-auto py-10">
+          {/* Animated pulsing gradient line */}
+          <motion.div
+            className="block absolute left-8 md:left-1/2 top-0 bottom-0 w-[3px] -translate-x-1/2 bg-gradient-to-b from-purple-500 via-cyan-500 to-emerald-500 rounded-full z-0"
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+              boxShadow: [
+                "0 0 8px rgba(168, 85, 247, 0.3)",
+                "0 0 16px rgba(6, 182, 212, 0.6)",
+                "0 0 8px rgba(16, 185, 129, 0.3)"
+              ]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          
+          <div className="space-y-12 md:space-y-24">
+            {CERTIFICATES.map((cert, index) => {
+              const isEven = index % 2 === 0;
+              const isExpanded = hoveredId === cert.id;
+              
+              return (
+                <div key={cert.id} className={`relative flex items-start justify-between ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} flex-col md:gap-16 pl-16 md:pl-0`}>
+                  
+                  {/* Node with pulse effect */}
+                  <div className="flex absolute left-8 md:left-1/2 top-12 -translate-y-1/2 -translate-x-1/2 z-10 items-center justify-center">
+                    {/* Pulsing ring */}
+                    <div className={`absolute w-12 h-12 rounded-full animate-ping opacity-40 ${cert.shadowColor}`} />
+                    {/* Solid center node */}
+                    <div className={`w-6 h-6 border-[4px] rounded-full bg-[#030712] relative z-10 ${cert.borderColor}`} />
+                  </div>
+                  
+                  {/* Empty div for spacing on desktop */}
+                  <div className="hidden md:block md:w-1/2"></div>
+
+                  {/* Card matching Alfareza styling */}
+                  <motion.div 
+                    layout
+                    onMouseEnter={() => setHoveredId(cert.id)}
+                    onMouseLeave={() => setHoveredId(null)}
+                    className={`w-full md:w-1/2 cursor-pointer ${isEven ? 'md:text-right text-left' : 'text-left'}`}
+                  >
+                    <div className="bg-[#0B1120] p-6 sm:p-8 rounded-[1.5rem] hover:bg-[#0f172a] transition-colors border border-white/[0.05] relative overflow-hidden group shadow-2xl">
+                      
+                      <div className={`text-sm font-bold mb-3 ${cert.colorHex}`}>
+                        {cert.year}
+                      </div>
+                      
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-3 leading-snug">{cert.name}</h3>
+                      <p className="text-foreground/70 text-sm leading-relaxed mb-2">{cert.description}</p>
+                      <p className="text-foreground/50 text-xs italic">{cert.issuer}</p>
+                      
+                      <AnimatePresence>
+                        {isExpanded && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pt-6 mt-6 border-t border-white/5 flex flex-col items-center">
+                              <iframe 
+                                src={`${cert.link}#view=FitH`}
+                                title={cert.name}
+                                className="w-full h-64 md:h-80 rounded-lg mb-6 bg-black/20 border border-white/5" 
+                              />
+                              <a 
+                                href={cert.link} 
+                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="flex items-center gap-2 bg-cyan-400 hover:bg-cyan-300 text-slate-950 px-6 py-3 rounded-full font-bold transition-colors w-full justify-center shadow-lg shadow-cyan-400/20"
+                              >
+                                <Download className="w-5 h-5" />
+                                UNDUH PDF
+                              </a>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </motion.div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -62,7 +62,10 @@ export function ProjectsSection() {
     >
       <div className="max-w-6xl mx-auto">
         <FadeUp>
-          <h2 className="text-xl md:text-2xl font-black mb-10">PROYEK</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 tracking-wider">Proyek Unggulan</h2>
+            <p className="text-foreground/70 text-lg sm:text-xl">Karya yang telah saya rancang dan kembangkan.</p>
+          </div>
         </FadeUp>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

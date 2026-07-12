@@ -58,7 +58,7 @@ export function SkillsSection() {
       <div className="max-w-6xl mx-auto">
         <FadeUp>
           <div className="text-center mb-16">
-            <h2 className="text-xl md:text-2xl font-black mb-4 uppercase tracking-wider">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 uppercase tracking-wider">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-blue-500">Skills</span> | Tech
             </h2>
             <p className="text-foreground/60 text-lg">
